@@ -7,22 +7,22 @@ import java.util.List;
  *
  * @author mandy
  */
-public class Agenda {
+public class Agenda implements AgendaInterface{
     
     private List<Contato> contatosSalvos = new ArrayList<>();
     
-    public boolean addContato(Contato contato){
+    public void addContato(Contato contato){
         try{
             contatosSalvos.add(contato);
             System.out.println("\nContato salvo com sucesso!");
-            return true;
+//            return true;
         } catch(Exception e){
             System.out.println("\nOcorreu um erro ao tentar inserir contato, tente novamente!");
-            return false;
+//            return false;
         }
     }
     
-    public boolean listContato(){
+    public void listContato(){
         
         try{
             for(int i = 0; i < contatosSalvos.size(); i++){
@@ -34,15 +34,15 @@ public class Agenda {
                 System.out.println("Anotação: " + contatosSalvos.get(i).getAnotacao());
                 System.out.println("\n");
             }
-            return true;
+//            return true;
         } catch(Exception e){
             System.out.println("\nOcorreu um erro ao tentar listar seus contatos, tente novamente!");
-            return false;
+//            return false;
         }
         
     }
     
-    public boolean deleteContato(int ddd, int telefone){
+    public void deleteContato(int ddd, int telefone){
         
         try{
             for(int i = 0; i < contatosSalvos.size(); i++){
@@ -51,14 +51,14 @@ public class Agenda {
                     System.out.println("\nContato removido com Sucesso!");
                 }
             }
-            return true;
+//            return true;
         } catch (Exception e){
             System.out.println("\nOcorreu um erro durante a remocão de um contato, tente novamente");
-            return false;
+//            return false;
         }
     }
     
-        public boolean updateContato(String nome, int telefone, Contato contato){
+        public void updateContato(String nome, int telefone, Contato contato){
         
         try{
             for(int i = 0; i < contatosSalvos.size(); i++){
@@ -72,12 +72,62 @@ public class Agenda {
                 }
             }
             System.out.println("\nContato atualizado!");
-            return true;
+//            return true;
         } catch (Exception e){
             System.out.println("\nOcorreu um erro ao tentar atualizado o contato de " + contato.getNomeContato());
-            return false;
+//            return false;
         }
         
+    }
+
+    public void searchNome(String nome) {
+        
+        int aux = 0;
+        
+        try{
+            for(int i = 0; i < contatosSalvos.size(); i++){
+                if(contatosSalvos.get(i).getNomeContato().equals(nome)){
+                    System.out.println("Nome: " + contatosSalvos.get(i).getNomeContato());
+                    System.out.println("Apelido: " + contatosSalvos.get(i).getApelido());
+                    System.out.println("DDD: " + contatosSalvos.get(i).getDDD());
+                    System.out.println("Telefone: " + contatosSalvos.get(i).getNumeroTelefone());
+                    System.out.println("E-mail: " + contatosSalvos.get(i).getEmail());
+                    System.out.println("Anotação: " + contatosSalvos.get(i).getAnotacao());
+                    System.out.println("\n");
+                    aux = aux + 1;
+                }
+            }
+            if(aux == 0){
+                System.out.println("\nContato não cadastrado!");
+            }
+        } catch (Exception e){
+            System.out.println("\nOcorreu um erro durante sua busca, tente novamente");
+        }
+        
+    }
+
+    public void searchTelefone(int ddd, int telefone) {
+        int aux = 0;
+        
+        try{
+            for(int i = 0; i < contatosSalvos.size(); i++){
+                if(contatosSalvos.get(i).getDDD() == ddd && contatosSalvos.get(i).getNumeroTelefone() == telefone){
+                    System.out.println("Nome: " + contatosSalvos.get(i).getNomeContato());
+                    System.out.println("Apelido: " + contatosSalvos.get(i).getApelido());
+                    System.out.println("DDD: " + contatosSalvos.get(i).getDDD());
+                    System.out.println("Telefone: " + contatosSalvos.get(i).getNumeroTelefone());
+                    System.out.println("E-mail: " + contatosSalvos.get(i).getEmail());
+                    System.out.println("Anotação: " + contatosSalvos.get(i).getAnotacao());
+                    System.out.println("\n");
+                    aux = aux + 1;
+                }
+            }
+            if(aux == 0){
+                System.out.println("\nContato não cadastrado!");
+            }
+        } catch (Exception e){
+            System.out.println("\nOcorreu um erro durante sua busca, tente novamente");
+        }
     }
     
 }

@@ -9,7 +9,7 @@ package br.edu.ifpb.Domain;
  *
  * @author mandy
  */
-public class Contato {
+public class Contato{
     
     private String nomeContato;
     private String apelido;
@@ -76,14 +76,5 @@ public class Contato {
     public void setAnotacao(String anotacao) {
         this.anotacao = anotacao;
     }
-
-    @Override
-    public String toString() {
-        return "Contato{" + "nomeContato=" + nomeContato + ", apelido=" + apelido + ", DDD=" + DDD + ", numeroTelefone=" + numeroTelefone + ", email=" + email + ", anotacao=" + anotacao + '}';
-    }
-
-    
-    
-    
     
 }

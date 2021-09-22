@@ -11,12 +11,16 @@ package br.edu.ifpb.Domain;
  */
 public interface AgendaInterface {
     
-    public boolean addContato(Contato contato);
+    public void addContato(Contato contato);
     
-    public boolean listContato();
+    public void listContato();
     
-    public boolean deleteContato(int ddd, int telefone);
+    public void deleteContato(int ddd, int telefone);
     
-    public boolean updateContato(Contato contato);
+    public void updateContato(String nome, int telefone, Contato contato);
+    
+    public void searchNome(String nome);
+    
+    public void searchTelefone(int ddd, int telefone);
     
 }
