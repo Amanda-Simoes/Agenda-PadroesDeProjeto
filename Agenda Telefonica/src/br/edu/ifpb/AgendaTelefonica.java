@@ -24,6 +24,7 @@ public class AgendaTelefonica {
         agenda.addContato(new Contato("Glaymar","Glay",83,985410023,"glaymar@gmail.com","Contato empresarial"));
         agenda.listContato();
         agenda.deleteContato(83, 998568541);
+        agenda.updateContato("Amanda",999792415, new Contato("Mandy","",83,999792415,"amanda@gmail.com","Contato pessoal"));
         agenda.listContato();
     }
     
