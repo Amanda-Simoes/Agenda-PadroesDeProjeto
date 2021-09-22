@@ -15,4 +15,6 @@ public interface AgendaInterface {
     
     public boolean listContato();
     
+    public boolean deleteContato(int ddd, int telefone);
+    
 }

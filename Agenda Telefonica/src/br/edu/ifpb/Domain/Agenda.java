@@ -38,6 +38,23 @@ public class Agenda {
             System.out.println("\nOcorreu um erro ao tentar listar seus contatos, tente novamente!");
             return false;
         }
+        
+    }
+    
+    public boolean deleteContato(int ddd, int telefone){
+        
+        try{
+            for(int i = 0; i < contatosSalvos.size(); i++){
+                if(contatosSalvos.get(i).getDDD() == ddd && contatosSalvos.get(i).getNumeroTelefone() == telefone){
+                    contatosSalvos.remove(i);
+                    System.out.println("\nContato removido com Sucesso!");
+                }
+            }
+            return true;
+        } catch (Exception e){
+            System.out.println("\nOcorreu um erro durante a remocão de um contato, tente novamente");
+            return false;
+        }
     }
     
 }
